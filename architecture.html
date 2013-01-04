@@ -60,17 +60,37 @@
     <div class="row">
         <div class="span8 offset2">
             <h3>Overview</h3>
+
             <p>
-                Here at PRISMS we are dedicated to developing an integrated suite of multi-scale computational tools. These
-                tools will eventually be open sourced and available to the wider community. Below is a high level overview
+                Here at PRISMS we are dedicated to developing an integrated suite of multi-scale computational tools.
+                These
+                tools will eventually be open sourced and available to the wider community. Below is a high level
+                overview
                 of our proposed architecture.
             </p>
         </div>
     </div>
 
+    <div id="eh-modal-id" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>Effective Hamiltonians</h3>
+        </div>
+        <div class="modal-body">
+            \[ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n
+            b_k^2 \right) \]
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+
     <div class="row">
         <div class="span8 offset2">
-            <img src="assets/img/Multiscale-Architecture.png">
+            <img id="multiscalearch" src="assets/img/Multiscale-Architecture.png" usemap="#multiscale">
+            <map id="multiscape_map" name="multiscale">
+                <area id="eh" name="effective_hamiltonians" href="#" shape="rect" coords="555,87,390,186">
+            </map>
         </div>
     </div>
 
@@ -83,6 +103,50 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/jquery.imagemapster.min.js"></script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+    var mytooltip = "tooltip here";
+
+    function myOnClick(data) {
+        $('#eh-modal-id').modal('show');
+    }
+
+    $(document).ready(function () {
+        var default_options =
+        {
+            mapKey:'name',
+            listKey:'name',
+            fillOpacity:0.5,
+            //highlight:true,
+            stroke:true,
+            //  render_highlight:{
+            //      fillColor:'22aff00',
+            //     strokeWidth:2
+            //},
+            //render_select:{
+            //    fillColor:'ff000c',
+            //    stroke:false
+            //},
+            //showToolTip:true,
+            onClick:myOnClick,
+            //toolTipClose:['area-mouseout'],
+            fadeInterval:50,
+            areas:[
+                {
+                    key:'effective_hamiltonians',
+                    //toolTip:mytooltip,
+                    onClick:myOnClick
+                }
+            ]
+        };
+
+        $('#multiscalearch').mapster(default_options);
+    })
+    ;
+</script>
 
 </body>
 </html>
