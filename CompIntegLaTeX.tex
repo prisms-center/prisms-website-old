@@ -1,0 +1,258 @@
+\documentclass[11pt]{article}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{mathrsfs}
+\usepackage{natbib}
+\usepackage{stmaryrd}
+\usepackage{subfigure}
+\renewcommand{\baselinestretch}{1.2}
+\jot 5mm
+%text dimensions
+\textwidth 6.5 in
+\oddsidemargin .2 in
+\topmargin -0.2 in
+\textheight 8.5 in
+\headheight 0.2in
+\overfullrule = 0pt
+\pagestyle{plain}
+\def\newpar{\par\vskip 0.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------------------------------------------------
+%               Bold Face Math Characters:
+%               All In Format: \B***** .
+%---------------------------------------------------------
+\def\BGamma{\mbox{\boldmath$\Gamma$}}
+\def\BDelta{\mbox{\boldmath$\Delta$}}
+\def\BTheta{\mbox{\boldmath$\Theta$}}
+\def\BLambda{\mbox{\boldmath$\Lambda$}}
+\def\BXi{\mbox{\boldmath$\Xi$}}
+\def\BPi{\mbox{\boldmath$\Pi$}}
+\def\BSigma{\mbox{\boldmath$\Sigma$}}
+\def\BUpsilon{\mbox{\boldmath$\Upsilon$}}
+\def\BPhi{\mbox{\boldmath$\Phi$}}
+\def\BPsi{\mbox{\boldmath$\Psi$}}
+\def\BOmega{\mbox{\boldmath$\Omega$}}
+\def\Balpha{\mbox{\boldmath$\alpha$}}
+\def\Bbeta{\mbox{\boldmath$\beta$}}
+\def\Bgamma{\mbox{\boldmath$\gamma$}}
+\def\Bdelta{\mbox{\boldmath$\delta$}}
+\def\Bepsilon{\mbox{\boldmath$\epsilon$}}
+\def\Bzeta{\mbox{\boldmath$\zeta$}}
+\def\Beta{\mbox{\boldmath$\eta$}}
+\def\Btheta{\mbox{\boldmath$\theta$}}
+\def\Biota{\mbox{\boldmath$\iota$}}
+\def\Bkappa{\mbox{\boldmath$\kappa$}}
+\def\Blambda{\mbox{\boldmath$\lambda$}}
+\def\Bmu{\mbox{\boldmath$\mu$}}
+\def\Bnu{\mbox{\boldmath$\nu$}}
+\def\Bxi{\mbox{\boldmath$\xi$}}
+\def\Bpi{\mbox{\boldmath$\pi$}}
+\def\Brho{\mbox{\boldmath$\rho$}}
+\def\Bsigma{\mbox{\boldmath$\sigma$}}
+\def\Btau{\mbox{\boldmath$\tau$}}
+\def\Bupsilon{\mbox{\boldmath$\upsilon$}}
+\def\Bphi{\mbox{\boldmath$\phi$}}
+\def\Bchi{\mbox{\boldmath$\chi$}}
+\def\Bpsi{\mbox{\boldmath$\psi$}}
+\def\Bomega{\mbox{\boldmath$\omega$}}
+\def\Bvarepsilon{\mbox{\boldmath$\varepsilon$}}
+\def\Bvartheta{\mbox{\boldmath$\vartheta$}}
+\def\Bvarpi{\mbox{\boldmath$\varpi$}}
+\def\Bvarrho{\mbox{\boldmath$\varrho$}}
+\def\Bvarsigma{\mbox{\boldmath$\varsigma$}}
+\def\Bvarphi{\mbox{\boldmath$\varphi$}}
+\def\bone{\mbox{\boldmath$1$}}
+\def\bzero{\mbox{\boldmath$0$}}
+%---------------------------------------------------------
+%               Bold Face Math Italic:
+%               All In Format: \b* .
+%---------------------------------------------------------
+\def\bA{\mbox{\boldmath$ A$}}
+\def\bB{\mbox{\boldmath$ B$}}
+\def\bC{\mbox{\boldmath$ C$}}
+\def\bD{\mbox{\boldmath$ D$}}
+\def\bE{\mbox{\boldmath$ E$}}
+\def\bF{\mbox{\boldmath$ F$}}
+\def\bG{\mbox{\boldmath$ G$}}
+\def\bH{\mbox{\boldmath$ H$}}
+\def\bI{\mbox{\boldmath$ I$}}
+\def\bJ{\mbox{\boldmath$ J$}}
+\def\bK{\mbox{\boldmath$ K$}}
+\def\bL{\mbox{\boldmath$ L$}}
+\def\bM{\mbox{\boldmath$ M$}}
+\def\bN{\mbox{\boldmath$ N$}}
+\def\bO{\mbox{\boldmath$ O$}}
+\def\bP{\mbox{\boldmath$ P$}}
+\def\bQ{\mbox{\boldmath$ Q$}}
+\def\bR{\mbox{\boldmath$ R$}}
+\def\bS{\mbox{\boldmath$ S$}}
+\def\bT{\mbox{\boldmath$ T$}}
+\def\bU{\mbox{\boldmath$ U$}}
+\def\bV{\mbox{\boldmath$ V$}}
+\def\bW{\mbox{\boldmath$ W$}}
+\def\bX{\mbox{\boldmath$ X$}}
+\def\bY{\mbox{\boldmath$ Y$}}
+\def\bZ{\mbox{\boldmath$ Z$}}
+\def\ba{\mbox{\boldmath$ a$}}
+\def\bb{\mbox{\boldmath$ b$}}
+\def\bc{\mbox{\boldmath$ c$}}
+\def\bd{\mbox{\boldmath$ d$}}
+\def\be{\mbox{\boldmath$ e$}}
+\def\bff{\mbox{\boldmath$ f$}}
+\def\bg{\mbox{\boldmath$ g$}}
+\def\bh{\mbox{\boldmath$ h$}}
+\def\bi{\mbox{\boldmath$ i$}}
+\def\bj{\mbox{\boldmath$ j$}}
+\def\bk{\mbox{\boldmath$ k$}}
+\def\bl{\mbox{\boldmath$ l$}}
+\def\bm{\mbox{\boldmath$ m$}}
+\def\bn{\mbox{\boldmath$ n$}}
+\def\bo{\mbox{\boldmath$ o$}}
+\def\bp{\mbox{\boldmath$ p$}}
+\def\bq{\mbox{\boldmath$ q$}}
+\def\br{\mbox{\boldmath$ r$}}
+\def\bs{\mbox{\boldmath$ s$}}
+\def\bt{\mbox{\boldmath$ t$}}
+\def\bu{\mbox{\boldmath$ u$}}
+\def\bv{\mbox{\boldmath$ v$}}
+\def\bw{\mbox{\boldmath$ w$}}
+\def\bx{\mbox{\boldmath$ x$}}
+\def\by{\mbox{\boldmath$ y$}}
+\def\bz{\mbox{\boldmath$ z$}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\LaTeX code for PRISMS computational integration flow chart}
+\author{V.~Gavini, V.~Sundararaghavan, G.~Tarcea, K.~Thornton, A.~van~der~Ven \& K.~Garikipati \\ University of Michigan, Ann Arbor}
+\maketitle
+\section*{KS-DFT}
+\begin{displaymath}
+H\psi = E\psi
+\end{displaymath}
+
+\subsection*{Arrow}
+\begin{displaymath}
+E^\mathrm{form},\;E^\mathrm{mig}\;\mathbb{C}_{ijkl}
+\end{displaymath}
+
+\section*{Right hand-side}
+
+\section*{Effective Hamiltonians}
+
+\begin{displaymath}
+E(\Bsigma) = V_0 + \sum_{\alpha} V_\alpha\,\prod_{i\in\alpha}\sigma_i
+\end{displaymath}
+
+\begin{displaymath}
+\sigma_i = -1,\;\sigma_j = 1
+\end{displaymath}
+
+\subsection*{Arrow}
+\begin{displaymath}
+E^\mathrm{config}
+\end{displaymath}
+
+\section*{Monte Carlo and kinetic Monte Carlo}
+Monte Carlo
+\begin{displaymath}
+Z = \sum \limits_\omega e^{-\beta E_\omega}
+\end{displaymath}
+
+Kinetic Monte Carlo
+\begin{displaymath}
+\frac{\partial P_j(t)}{\partial t} = \sum \limits_i \left(R_{i\rightarrow j}P_i(t) - R_{j\rightarrow i}P_j(t)\right)
+\end{displaymath}
+
+\subsection*{Arrow}
+Ppt growth
+\begin{displaymath}
+E^\mathrm{gb}
+\end{displaymath}
+
+\section*{Phase field with FE, FD and Fourier series}
+\begin{displaymath}
+\frac{\partial c(\bx)}{\partial t} = \nabla\cdot\left(\Gamma\left(c(\bx)\right)\nabla\mu\right)
+\end{displaymath}
+
+\subsection*{Arrow}
+Ordering, correlation functions
+\begin{displaymath}
+E(\bx,\bF,S),\;\Gamma
+\end{displaymath}
+
+\subsection*{Arrow}
+\begin{displaymath}
+\bM, R
+\end{displaymath}
+
+\subsection*{Arrow}
+\begin{displaymath}
+W(\bF^\mathrm{e}),\;\mathbb{C}_{ijkl}
+\end{displaymath}
+
+\section*{Continuum scale mass transport with FEM}
+\begin{displaymath}
+\frac{\partial \bar{c}}{\partial t} = \nabla\cdot\left(\bM\nabla\bar{\mu}\right) + R
+\end{displaymath}
+
+\section*{Continuum elastoplasticity with FEM}
+\begin{align*}
+&\rho\frac{\partial^2\bu}{\partial t^2} = \nabla\cdot\Btau + \bff,\quad \Btau = \frac{\partial W}{\partial \bF^\mathrm{e}}\bF^{\mathrm{e}^\mathrm{T}},\quad \bF = \bF^\mathrm{e}\bF^\mathrm{p}\\
+&\phi(\Btau^\mathrm{dev}) - \tau_\mathrm{Y} - K(\bar{\varepsilon}^\mathrm{p}) \le 0
+\end{align*}
+$\bF$
+
+\section*{Left hand-side}
+\subsection*{Arrow}
+\begin{displaymath}
+E^\mathrm{mig},\; E^\mathrm{coh}
+\end{displaymath}
+
+\section*{Atomistic constitutive laws}
+\begin{displaymath}
+x,\; y
+\end{displaymath}
+
+\section*{Discrete dislocation dynamics}
+\begin{displaymath}
+f^\mathrm{PK}_i = \epsilon_{ijk}\tau_{jm}b_m\xi_k
+\end{displaymath}
+
+\subsection*{Arrow}
+\begin{displaymath}
+H^{\alpha\beta}
+\end{displaymath}
+
+\subsection*{Arrow}
+Twinning
+\begin{displaymath}
+\bm^\mathrm{twn}_\beta,\;\bn^\mathrm{twn}_\beta,\;\tau_{\beta_0}^\mathrm{twn}
+\end{displaymath}
+
+\begin{displaymath}
+\tau_{\alpha_0}
+\end{displaymath}
+
+\section*{Crystal plasticity with FEM}
+\begin{align*}
+&\tau_\alpha = \bm_\alpha\cdot\Btau\bn_\alpha = \tau_{\alpha_0} + \sum_{\beta}H_{\alpha\beta}\gamma^\beta\\
+&\tau^\mathrm{twn}_\beta = \bm^\mathrm{twn}_\beta\cdot\Btau\bn^\mathrm{twn}_\beta = \tau^\mathrm{twn}_{\beta_0} + \sum_{\delta}H^\mathrm{twn}_{\beta\delta}\gamma^\delta
+\end{align*}
+
+$\bn_\alpha,\;\bm_\alpha$
+
+\subsection*{Arrow}
+\begin{displaymath}
+H^\mathrm{twn}_{\beta\delta}
+\end{displaymath}
+
+\subsection*{Arrow}
+\begin{displaymath}
+\phi,\;\tau_\mathrm{Y},\;K(\bar{\varepsilon}^\mathrm{p})
+\end{displaymath}
+
+
+\end{document}
