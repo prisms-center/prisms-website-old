@@ -40,9 +40,9 @@
     <h3>PRISMS Center</h3>
 </div>
 
-<hr>
+<hr class="nav-separator">
 
-<div class="row">
+<div class="row-fluid marketing">
     <div class="span8 offset1">
         <h3>Overview</h3>
 
@@ -53,6 +53,23 @@
             overview
             of our proposed architecture.
         </p>
+    </div>
+</div>
+
+<div class="row-fluid marketing">
+    <div class="span12 offset1">
+        <img id="multiscalearch" src="assets/img/Multiscale-Architecture.png" usemap="#multiscale">
+        <map id="multiscape_map" name="multiscale">
+            <area name="effective-hamiltonians" href="#" shape="rect" coords="555,87,390,186">
+            <area name="ks-dft" href="#" shape="rect" coords="375,10,210,111">
+            <area name="monte-carlo" href="#" shape="rect" coords="537,213,336,294">
+            <area name="phase-field" href="#" shape="rect" coords="402,303,190,403">
+            <area name="pheno" href="#" shape="rect" coords="520,456,326,501">
+            <area name="continuum" href="#" shape="rect" coords="458,567,201,703">
+            <area name="atomistic-constitutive" href="#" shape="rect" coords="185,95,29,194">
+            <area name="discrete-dislocation" href="#" shape="rect" coords="223,244,56,277">
+            <area name="crystal-plasticity" href="#" shape="rect" coords="275,448,83,557">
+        </map>
     </div>
 </div>
 
@@ -286,24 +303,6 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="span8 offset1">
-        <img id="multiscalearch" src="assets/img/Multiscale-Architecture.png" usemap="#multiscale">
-        <map id="multiscape_map" name="multiscale">
-            <area name="effective-hamiltonians" href="#" shape="rect" coords="555,87,390,186">
-            <area name="ks-dft" href="#" shape="rect" coords="375,10,210,111">
-            <area name="monte-carlo" href="#" shape="rect" coords="537,213,336,294">
-            <area name="phase-field" href="#" shape="rect" coords="402,303,190,403">
-            <area name="pheno" href="#" shape="rect" coords="520,456,326,501">
-            <area name="continuum" href="#" shape="rect" coords="458,567,201,703">
-            <area name="atomistic-constitutive" href="#" shape="rect" coords="185,95,29,194">
-            <area name="discrete-dislocation" href="#" shape="rect" coords="223,244,56,277">
-            <area name="crystal-plasticity" href="#" shape="rect" coords="275,448,83,557">
-        </map>
-    </div>
-</div>
-
-
 </div>
 <!-- /container -->
 
@@ -372,17 +371,11 @@
             stroke:true,
             fill: true,
             render_highlight:{
-                //fillColor: 'fcf8dc',              //'22aff00',
-                strokeColor:'f1edc2',
+                //fillColor: 'fcf8dc',
+                strokeColor: '828282',
                 strokeWidth:4
             },
-            //render_select:{
-            //    fillColor:'ff000c',
-            //    stroke:false
-            //},
-            //showToolTip:true,
             onClick:myOnClick,
-            //toolTipClose:['area-mouseout'],
             fadeInterval:50,
             areas:[
                 {

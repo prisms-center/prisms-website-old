@@ -1,7 +1,7 @@
 body {
     padding-top: 20px;
     padding-bottom: 40px;
-    background: url(../img/fading_background_17.png) repeat-x;
+    background: url(../img/fading_background_22.png) repeat-x;
     /*background-color: #c5c5c5 ;*/
 }
 
@@ -50,12 +50,16 @@ legend.extra-padding {
 }
 
 .nav-pills .active > a  {
-    background: #CDC0B0;
+    background: #68838B;
     color: #000000;
 }
 
 .nav-pills .active > a:hover  {
     background: #EEDFCC;
     color: #000000;
+}
+
+.nav-separator {
+    border-color:#828282;
 }
 
