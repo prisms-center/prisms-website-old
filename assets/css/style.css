@@ -51,6 +51,7 @@ legend.extra-padding {
 
 .nav-pills .active > a  {
     background: #CDC0B0;
+    color: #000000;
 }
 
 .nav-pills .active > a:hover  {
