@@ -1,8 +1,22 @@
 body {
     padding-top: 20px;
     padding-bottom: 40px;
-    background: url(../img/fading_background_17.png) repeat-x;
+    /*background: url(../img/fading_background_17.png) repeat-x;*/
     /*background-color: #c5c5c5 ;*/
+    background-image: linear-gradient(bottom, rgb(36,95,117) 5%, rgb(19,110,138) 53%, rgb(15,117,148) 77%);
+    background-image: -o-linear-gradient(bottom, rgb(36,95,117) 5%, rgb(19,110,138) 53%, rgb(15,117,148) 77%);
+    background-image: -moz-linear-gradient(bottom, rgb(36,95,117) 5%, rgb(19,110,138) 53%, rgb(15,117,148) 77%);
+    background-image: -webkit-linear-gradient(bottom, rgb(36,95,117) 5%, rgb(19,110,138) 53%, rgb(15,117,148) 77%);
+    background-image: -ms-linear-gradient(bottom, rgb(36,95,117) 5%, rgb(19,110,138) 53%, rgb(15,117,148) 77%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.05, rgb(36,95,117)),
+        color-stop(0.53, rgb(19,110,138)),
+        color-stop(0.77, rgb(15,117,148))
+    );
 }
 
 /* Custom container */
@@ -50,12 +64,21 @@ legend.extra-padding {
 }
 
 .nav-pills .active > a  {
-    background: #CDC0B0;
+    background: #5CD6E6; /* #CDC0B0;*/
     color: #000000;
 }
 
+.nav-pills a:hover {
+    background: #fffff;
+}
+
 .nav-pills .active > a:hover  {
-    background: #EEDFCC;
+    background: #96E7F9;    /*#EEDFCC;*/
     color: #000000;
 }
+
+/*a:link {color:#FF0000;}*/
+/*a:visited {color:#00FF00;}*/
+/*a:hover {color:#FF00FF;}*/
+/*a:active {color:#0000FF;}*/
 
