@@ -9,23 +9,8 @@
 
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <style>
-        body {
-            padding-top: 20px;
-            padding-bottom: 40px;
-        }
-
-            /* Custom container */
-        .container-narrow {
-            margin: 0 auto;
-            max-width: 700px;
-        }
-
-        .container-narrow > hr {
-            margin: 30px 0;
-        }
-    </style>
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -44,282 +29,279 @@
 
 <div class="container-narrow">
 
-    <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-            <li><a href="prisms.html">Home</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="people.html">People</a></li>
-            <li><a href="contacts.html">Contact</a></li>
-        </ul>
-        <h3 class="muted">PRISMS Center</h3>
+<div class="masthead">
+    <ul class="nav nav-pills pull-right">
+        <li><a href="prisms.html">Home</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+    </ul>
+    <h3>PRISMS Center</h3>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="span8 offset1">
+        <h3>Overview</h3>
+
+        <p>
+            Here at PRISMS we are dedicated to developing an integrated suite of multi-scale computational tools.
+            These
+            tools will eventually be open sourced and available to the wider community. Below is a high level
+            overview
+            of our proposed architecture.
+        </p>
     </div>
+</div>
 
-    <hr>
 
-    <div class="row">
-        <div class="span8 offset2">
-            <h3>Overview</h3>
-
-            <p>
-                Here at PRISMS we are dedicated to developing an integrated suite of multi-scale computational tools.
-                These
-                tools will eventually be open sourced and available to the wider community. Below is a high level
-                overview
-                of our proposed architecture.
-            </p>
-        </div>
+<div id="ks-dft-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>KS-DFT</h3>
     </div>
-
-    <div class="row">
-        <div class="span8 offset2">
-            <p>
-            input: 
-            </p>
-            <p>
-            </p>
-            <p>
-            </p>
-        </div>
-    </div>
-
-
-    <div id="ks-dft-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>KS-DFT</h3>
-        </div>
-        <div class="modal-body">
-            <p>
+    <div class="modal-body">
+        <p>
             Equation: \[ H\psi = E\psi \]
-            </p>
-            <p>
+        </p>
+
+        <p>
             Output: \[ E^\mathrm{form},\;E^\mathrm{mig}\;\mathbb{C}_{ijkl} \]
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
+        </p>
     </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
 
-    <div id="monte-carlo-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Monte Carlo and Kinetic Monte Carlo</h3>
-        </div>
-        <div class="modal-body">
-            <p>
-            Input: 
+<div id="monte-carlo-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Monte Carlo and Kinetic Monte Carlo</h3>
+    </div>
+    <div class="modal-body">
+        <p>
+            Input:
             \[ E^\mathrm{config}\\ Ppt growth \]
-            </p>
+        </p>
 
-            <p>
+        <p>
             Equation (Monte Carlo):
             \[ Z = \sum \limits_\omega e^{-\beta E_\omega} \]
-            </p>
+        </p>
 
-            <p>
+        <p>
             Equation (Kinetic Monte Carlo):
-            \[ \frac{\partial P_j(t)}{\partial t} = \sum \limits_i \left(R_{i\rightarrow j}P_i(t) - R_{j\rightarrow i}P_j(t)\right) \]
-            <p>
-            Output: 
+            \[ \frac{\partial P_j(t)}{\partial t} = \sum \limits_i \left(R_{i\rightarrow j}P_i(t) - R_{j\rightarrow
+            i}P_j(t)\right) \]
+
+        <p>
+            Output:
             \[ E(x,F,S),\;\Gamma \\ Ordering, correlation functions\]
             \[ M,R \]
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
+        </p>
     </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
 
-    <div id="phase-field-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Phase field with FE, FD and Fourier series</h3>
-        </div>
-        <div class="modal-body">
-            <p>
-            Input: 
+<div id="phase-field-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Phase field with FE, FD and Fourier series</h3>
+    </div>
+    <div class="modal-body">
+        <p>
+            Input:
             \[ E^\mathrm{gb} \]
             \[ E(x,F,S),\;\Gamma \]
-            </p>
+        </p>
 
-            <p>
-            Equation: 
+        <p>
+            Equation:
             \[ \frac{\partial c(x)}{\partial t} = \nabla\cdot\left(\Gamma\left(c(x)\right)\nabla\mu\right) \]
-            </p>
+        </p>
 
-            <p>
+        <p>
             Output: \[ Nano-/micro-structure, \\Mean \space field \space dynamics \]
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
+        </p>
     </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
 
-    <div id="continuum-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Continuum elastoplasticity with FEM</h3>
-        </div>
-        <div class="modal-body">
-            <p>
-                Input:
+<div id="continuum-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Continuum elastoplasticity with FEM</h3>
+    </div>
+    <div class="modal-body">
+        <p>
+            Input:
             \[ W(F^\mathrm{e}),\;\mathbb{C}_{ijkl} \]
             \[ \phi,\;\tau_\mathrm{Y},\;K(\bar{\varepsilon}^\mathrm{p}) \]
-            </p>
+        </p>
 
-            <p>
+        <p>
             Equation:
-            \[ \rho\frac{\partial^2u}{\partial t^2} = \nabla\cdot\tau + f,\quad \tau = \frac{\partial W}{\partial F^\mathrm{e}}F^{\mathrm{e}^\mathrm{T}},\quad F = F^\mathrm{e}F^\mathrm{p}\\ 
+            \[ \rho\frac{\partial^2u}{\partial t^2} = \nabla\cdot\tau + f,\quad \tau = \frac{\partial W}{\partial
+            F^\mathrm{e}}F^{\mathrm{e}^\mathrm{T}},\quad F = F^\mathrm{e}F^\mathrm{p}\\
             \phi(\tau^\mathrm{dev}) - \tau_\mathrm{Y} - K(\bar{\varepsilon}^\mathrm{p}) \le 0
-            
+
             \]
-            </p>
+        </p>
 
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
     </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
 
-    <div id="pheno-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Phenomenological mass transport with FEM</h3>
-        </div>
-        <div class="modal-body">
-            <p>
+<div id="pheno-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Phenomenological mass transport with FEM</h3>
+    </div>
+    <div class="modal-body">
+        <p>
             Input: \[ Mean \space field \space dynamics \\ M,R\]
-            </p>
+        </p>
 
-            <p>
+        <p>
             Equation: \[ \frac{\partial \bar{c}}{\partial t} = \nabla\cdot\left(M\nabla\bar{\mu}\right) + R \]
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
+        </p>
     </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
 
-    <div id="atomistic-constitutive-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Atomistic constitutive laws</h3>
-        </div>
-        <div class="modal-body">
-            <p>
+<div id="atomistic-constitutive-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Atomistic constitutive laws</h3>
+    </div>
+    <div class="modal-body">
+        <p>
             Input: \[ E^\mathrm{form},\;E^\mathrm{mig}\;\mathbb{C}_{ijkl} \]
-            <p>
 
-            <p>
+        <p>
+
+        <p>
             Equation: \[ x,\; y \]
-            </p>
+        </p>
 
-            <p>
+        <p>
             Output: \[ Twinning \\ m^\mathrm{twn}_\beta,\;n^\mathrm{twn}_\beta,\;\tau_{\beta_0}^\mathrm{twn} \]
             \[ \tau_{\alpha_0} \]
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
+        </p>
     </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
 
-    <div id="discrete-dislocation-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Discrete dislocation dynamics</h3>
-        </div>
-        <div class="modal-body">
-            <p>
+<div id="discrete-dislocation-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Discrete dislocation dynamics</h3>
+    </div>
+    <div class="modal-body">
+        <p>
             Input: \[ Dislocation \space mobilities \]
-            </p>
+        </p>
 
-            <p>
+        <p>
             Equation: \[ f^\mathrm{PK}_i = \epsilon_{ijk}\tau_{jm}b_m\xi_k \]
-            </p>
+        </p>
 
-            <p>
-            Output: 
+        <p>
+            Output:
             \[ H^{\alpha\beta} \]
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
+        </p>
     </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
 
-    <div id="crystal-plasticity-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Crystal plasticity with FEM</h3>
-        </div>
-        <div class="modal-body">
-            <p>
+<div id="crystal-plasticity-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Crystal plasticity with FEM</h3>
+    </div>
+    <div class="modal-body">
+        <p>
             Input: \[ Twinning\\ m^\mathrm{twn}_\beta,\;n^\mathrm{twn}_\beta,\;\tau_{\beta_0}^\mathrm{twn} \]
             \[ \tau_{\alpha_0} \]
             \[ H^{\alpha\beta} \]
-                \[ H^\mathrm{twm}_{\beta\delta} \]
-                \[ Nano-/micro-structure\]
-            </p>
+            \[ H^\mathrm{twm}_{\beta\delta} \]
+            \[ Nano-/micro-structure\]
+        </p>
 
-            <p>
+        <p>
             Equation:
             \[ \tau_\alpha = m_\alpha\cdot\tau n_\alpha = \tau_{\alpha_0} + \sum_{\beta}H_{\alpha\beta}\gamma^\beta\\
-            \tau^\mathrm{twn}_\beta = m^\mathrm{twn}_\beta\cdot\tau n^\mathrm{twn}_\beta = \tau^\mathrm{twn}_{\beta_0} + \sum_    {\delta}H^\mathrm{twn}_{\beta\delta}\gamma^\delta \]
-            </p>
+            \tau^\mathrm{twn}_\beta = m^\mathrm{twn}_\beta\cdot\tau n^\mathrm{twn}_\beta = \tau^\mathrm{twn}_{\beta_0} +
+            \sum_ {\delta}H^\mathrm{twn}_{\beta\delta}\gamma^\delta \]
+        </p>
 
-            <p>
+        <p>
             Output: \[ \phi,\;\tau_\mathrm{Y},\;K(\bar{\varepsilon}^\mathrm{p}) \]
-            <p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
-    </div>
 
-    <div id="effective-hamiltonians-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Effective Hamiltonians</h3>
-        </div>
-        <div class="modal-body">
-            <p>
+        <p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+
+<div id="effective-hamiltonians-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Effective Hamiltonians</h3>
+    </div>
+    <div class="modal-body">
+        <p>
             Input: \[ E^\mathrm{form},\;E^\mathrm{mig}\;\mathbb{C}_{ijkl} \]
-            <p>
+
+        <p>
             Equation:
             \[ E(\sigma) = V_0 + \sum_{\alpha} V_\alpha\,\prod_{i\in\alpha}\sigma_i \]
             \[ \sigma_i = -1,\;\sigma_j = 1 \]
-            </p>
-            <p>
-            Output:
-                \[ E^\mathrm{config} \]
-                \[ W(F^\mathrm{e}),\;\mathbb{C}_{ijkl} \]
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
-    </div>
+        </p>
 
-    <div class="row">
-        <div class="span8 offset2">
-            <img id="multiscalearch" src="assets/img/Multiscale-Architecture.png" usemap="#multiscale">
-            <map id="multiscape_map" name="multiscale">
-                <area name="effective-hamiltonians" href="#" shape="rect" coords="555,87,390,186">
-                <area name="ks-dft" href="#" shape="rect" coords="375,10,210,111">
-                <area name="monte-carlo" href="#" shape="rect" coords="537,213,336,294">
-                <area name="phase-field" href="#" shape="rect" coords="402,303,190,403">
-                <area name="pheno" href="#" shape="rect" coords="520,456,326,501">
-                <area name="continuum" href="#" shape="rect" coords="458,567,201,703">
-                <area name="atomistic-constitutive" href="#" shape="rect" coords="185,95,29,194">
-                <area name="discrete-dislocation" href="#" shape="rect" coords="223,244,56,277">
-                <area name="crystal-plasticity" href="#" shape="rect" coords="275,448,83,557">
-            </map>
-        </div>
+        <p>
+            Output:
+            \[ E^\mathrm{config} \]
+            \[ W(F^\mathrm{e}),\;\mathbb{C}_{ijkl} \]
+        </p>
     </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span8 offset1">
+        <img id="multiscalearch" src="assets/img/Multiscale-Architecture.png" usemap="#multiscale">
+        <map id="multiscape_map" name="multiscale">
+            <area name="effective-hamiltonians" href="#" shape="rect" coords="555,87,390,186">
+            <area name="ks-dft" href="#" shape="rect" coords="375,10,210,111">
+            <area name="monte-carlo" href="#" shape="rect" coords="537,213,336,294">
+            <area name="phase-field" href="#" shape="rect" coords="402,303,190,403">
+            <area name="pheno" href="#" shape="rect" coords="520,456,326,501">
+            <area name="continuum" href="#" shape="rect" coords="458,567,201,703">
+            <area name="atomistic-constitutive" href="#" shape="rect" coords="185,95,29,194">
+            <area name="discrete-dislocation" href="#" shape="rect" coords="223,244,56,277">
+            <area name="crystal-plasticity" href="#" shape="rect" coords="275,448,83,557">
+        </map>
+    </div>
+</div>
 
 
 </div>
@@ -340,40 +322,40 @@
     function myOnClick(data) {
         switch (data.key) {
             case 'effective-hamiltonians':
-            $('#effective-hamiltonians-modal-id').modal('show');
-            break;
+                $('#effective-hamiltonians-modal-id').modal('show');
+                break;
 
             case 'ks-dft':
-            $('#ks-dft-modal-id').modal('show');
-            break;
+                $('#ks-dft-modal-id').modal('show');
+                break;
 
             case 'monte-carlo':
-            $('#monte-carlo-modal-id').modal('show');
-            break;
+                $('#monte-carlo-modal-id').modal('show');
+                break;
 
             case 'phase-field':
-            $('#phase-field-modal-id').modal('show');
-            break;
+                $('#phase-field-modal-id').modal('show');
+                break;
 
             case 'pheno':
-            $('#pheno-modal-id').modal('show');
-            break;
+                $('#pheno-modal-id').modal('show');
+                break;
 
             case 'continuum':
-            $('#continuum-modal-id').modal('show');
-            break;
+                $('#continuum-modal-id').modal('show');
+                break;
 
             case 'atomistic-constitutive':
-            $('#atomistic-constitutive-modal-id').modal('show');
-            break;
+                $('#atomistic-constitutive-modal-id').modal('show');
+                break;
 
             case 'discrete-dislocation':
-            $('#discrete-dislocation-modal-id').modal('show');
-            break;
+                $('#discrete-dislocation-modal-id').modal('show');
+                break;
 
             case 'crystal-plasticity':
-            $('#crystal-plasticity-modal-id').modal('show');
-            break;
+                $('#crystal-plasticity-modal-id').modal('show');
+                break;
         }
     }
 
@@ -384,14 +366,16 @@
         {
             mapKey:'name',
             listKey:'name',
-            isSelectable: false,
+            isSelectable:false,
             fillOpacity:0,
-            //highlight:true,
+            highlight:true,
             stroke:true,
-            //  render_highlight:{
-            //      fillColor:'22aff00',
-            //     strokeWidth:2
-            //},
+            fill: true,
+            render_highlight:{
+                //fillColor: 'fcf8dc',              //'22aff00',
+                strokeColor:'f1edc2',
+                strokeWidth:4
+            },
             //render_select:{
             //    fillColor:'ff000c',
             //    stroke:false
@@ -405,28 +389,28 @@
                     key:'effective-hamiltonians'
                 },
                 {
-                    key: 'ks-dft'
+                    key:'ks-dft'
                 },
                 {
-                    key: 'monte-carlo'
+                    key:'monte-carlo'
                 },
                 {
-                    key: 'phase-field'
+                    key:'phase-field'
                 },
                 {
-                    key: 'pheno'
+                    key:'pheno'
                 },
                 {
-                    key: 'continuum'
+                    key:'continuum'
                 },
                 {
-                    key: 'atomistic-constitutive'
+                    key:'atomistic-constitutive'
                 },
                 {
-                    key: 'discrete-dislocation'
+                    key:'discrete-dislocation'
                 },
                 {
-                    key: 'crystal-plasticity'
+                    key:'crystal-plasticity'
                 }
             ]
         };

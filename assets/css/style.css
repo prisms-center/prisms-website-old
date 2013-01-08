@@ -1,0 +1,60 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background: url(../img/fading_background_17.png) repeat-x;
+    /*background-color: #c5c5c5 ;*/
+}
+
+/* Custom container */
+.container-narrow {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    font-size: 72px;
+    line-height: 1;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+legend.extra-padding {
+    margin: 30px 0;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 60px 0;
+}
+
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+/* Pills navigation colors */
+.nav-pills a {
+    color: #000000;
+}
+
+.nav-pills .active > a  {
+    background: #CDC0B0;
+}
+
+.nav-pills .active > a:hover  {
+    background: #EEDFCC;
+    color: #000000;
+}
+
