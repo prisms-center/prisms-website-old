@@ -30,66 +30,23 @@
 <div class="container-narrow">
 
     <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="architecture.html">Architecture</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="people.html">People</a></li>
-            <li><a href="contacts.html">Contact</a></li>
+        <ul id="prisms-tabs" class="nav nav-pills pull-right">
+            <li id="home" class="active"><a href="#/prisms">Home</a></li>
+            <li id="architecture"><a href="#/prisms/architecture">Architecture</a></li>
+            <li id="materialscommons"><a href="#/prisms/materialscommons">Materials Commons</a></li>
+            <li id="people"><a href="#/prisms/people">People</a></li>
+            <li id="publications"><a href="#/prisms/publications">Publications</a></li>
         </ul>
-        <h3 class="prisms-logo">PRISMS Center</h3>
+        <h3 class="prisms-logo"><a href="index.html">PRISMS Center</a></h3>
     </div>
 
     <hr class="nav-separator">
 
-    <div class="jumbotron">
-        <h3>Welcome</h3>
-
-        <p class="">
-            The Predictive Integrated Structural Materials Science (PRISMS) Center is dedicated to the development of
-            integrated multi-scale computations tools. These tools enable the prediction and analysis of microstructural
-            evolution and mechanical behavior of structural materials.
-        </p>
-        <a class="btn btn-large btn-success" href="architecture.html">View Our Multiscale Architecture</a>
-    </div>
-
-    <hr>
-
-    <div class="row-fluid marketing">
-        <div class="span12">
-            <h4>Materials Commons</h4>
-
-            <p>
-                We are developing a knowledge repository and virtual
-                collaboration space for curating, archiving and disseminating information from experiments
-                and computations as well as providing a collaborative platform for development of opensource
-                code with active involvement of a broader PRISMS open source community. This repository is called
-                Materials Commons and will be available at <a href="http://materialscommons.org">http://materialscommons.org</a>.
-            </p>
-
-            <p>
-                Check back here and at the Materials Commons site for updates. We are working hard to build up our
-                repository of computational and experimental data and results.
-            </p>
-        </div>
-    </div>
-
-    <div class="row-fluid marketing">
-        <div class="span12">
-            <h4><i class="icon-bullhorn space-icon5"></i>News</h4>
-            <ul style="list-style-type: none;">
-                <li><i class="icon-arrow-right space-icon5"></i>PRISMS Center Launches in October 2012</li>
-            </ul>
-        </div>
-    </div>
-
-    <hr>
+    <div ng-view></div>
 
     <div class="footer">
         <p>&copy; Company 2012</p>
     </div>
-
 </div>
 <!-- /container -->
 
@@ -99,5 +56,108 @@
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/bootstrap.js"></script>
 <script src="assets/js/angular.min.js"></script>
+<script src="assets/js/prisms/prisms-app.js"></script>
+<script src="assets/js/prisms/controllers.js"></script>
+<script src="assets/js/jquery.imagemapster.min.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script src="assets/js/prisms/util.js"></script>
+<script>
+    var mytooltip = "tooltip here";
+
+    function myOnClick(data) {
+        switch (data.key) {
+            case 'effective-hamiltonians':
+                $('#effective-hamiltonians-modal-id').modal('show');
+                break;
+
+            case 'ks-dft':
+                $('#ks-dft-modal-id').modal('show');
+                break;
+
+            case 'monte-carlo':
+                $('#monte-carlo-modal-id').modal('show');
+                break;
+
+            case 'phase-field':
+                $('#phase-field-modal-id').modal('show');
+                break;
+
+            case 'pheno':
+                $('#pheno-modal-id').modal('show');
+                break;
+
+            case 'continuum':
+                $('#continuum-modal-id').modal('show');
+                break;
+
+            case 'atomistic-constitutive':
+                $('#atomistic-constitutive-modal-id').modal('show');
+                break;
+
+            case 'discrete-dislocation':
+                $('#discrete-dislocation-modal-id').modal('show');
+                break;
+
+            case 'crystal-plasticity':
+                $('#crystal-plasticity-modal-id').modal('show');
+                break;
+        }
+    }
+
+    var inArea = false;
+
+    $(document).ready(function() {
+        var default_options =
+        {
+            mapKey:'name',
+            listKey:'name',
+            isSelectable:false,
+            fillOpacity:0,
+            highlight:true,
+            stroke:true,
+            fill:true,
+            render_highlight:{
+                //fillColor: 'fcf8dc',
+                strokeColor:'828282',
+                strokeWidth:4
+            },
+            onClick:myOnClick,
+            fadeInterval:50,
+            areas:[
+                {
+                    key:'effective-hamiltonians'
+                },
+                {
+                    key:'ks-dft'
+                },
+                {
+                    key:'monte-carlo'
+                },
+                {
+                    key:'phase-field'
+                },
+                {
+                    key:'pheno'
+                },
+                {
+                    key:'continuum'
+                },
+                {
+                    key:'atomistic-constitutive'
+                },
+                {
+                    key:'discrete-dislocation'
+                },
+                {
+                    key:'crystal-plasticity'
+                }
+            ]
+        };
+
+        $('#multiscalearch').mapster(default_options);
+    })
+    ;
+</script>
 </body>
 </html>
