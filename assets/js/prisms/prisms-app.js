@@ -14,7 +14,6 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 
 app.run(function($rootScope, $location) {
     $rootScope.$on('$routeChangeStart', function(event, next, current) {
-        console.log("next = " + next.templateUrl);
         if (matchesPartial(next, "partials/front-page")) {
             setActiveTab("#home");
         }
@@ -37,6 +36,7 @@ function matchesPartial(next, what) {
     if (!next.templateUrl) {
         return false;
     }
-
-    return next.templateUrl.indexOf(what) != -1;
+    else {
+        return next.templateUrl.indexOf(what) != -1;
+    }
 }

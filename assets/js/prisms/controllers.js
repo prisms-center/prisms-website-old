@@ -17,5 +17,5 @@ function PeopleController($scope) {
 }
 
 function PublicationsController($scope) {
-    
+
 }
