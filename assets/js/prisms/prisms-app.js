@@ -20,7 +20,7 @@ app.run(function($rootScope, $location) {
         else if (matchesPartial(next, "partials/architecture")) {
             setActiveTab("#architecture");
         }
-        else if (matchesPartial(next, "partials/materialcommons")) {
+        else if (matchesPartial(next, "partials/materialscommons")) {
             setActiveTab("#materialscommons");
         }
         else if (matchesPartial(next, "partials/people")) {
