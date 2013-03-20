@@ -1,4 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="prisms">
+<head>
+    <meta charset="utf-8">
+    <title>PRISMS Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/mc-favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+</head>
+
+<body>
+
+<div class="container-narrow">
+
+<div class="masthead">
+    <ul id="prisms-tabs" class="nav nav-pills pull-right">
+        <li id="home" class="active"><a href="index.html#/prisms">Home</a></li>
+        <li id="architecture"><a href="architecture.html">Architecture</a></li>
+        <li id="materialscommons"><a href="index.html#/prisms/materialscommons">Materials Commons</a></li>
+        <li id="people"><a href="index.html#/prisms/people">People</a></li>
+        <li id="publications"><a href="index.html#/prisms/publications">Publications</a></li>
+    </ul>
+    <h3 class="prisms-logo"><a href="index.html">PRISMS Center</a></h3>
+</div>
+
+<hr class="nav-separator">
 <div class="row-fluid">
     <div class="span12">
         <h3>Overview</h3>
@@ -9,6 +51,8 @@
             tools will eventually be open sourced and available to the wider community. Below is a high level
             overview
             of our proposed architecture.
+
+            Equation: \[ H\psi = E\psi \]
         </p>
     </div>
 </div>
@@ -17,17 +61,17 @@
     <div class="span12 offset1">
         <img id="multiscalearch" src="assets/img/Multiscale-Architecture.png" usemap="#multiscale">
 
-        <!--<map id="multiscape_map" name="multiscale">-->
-            <!--<area name="effective-hamiltonians" href="#" shape="rect" coords="555,87,390,186">-->
-            <!--<area name="ks-dft" href="#" shape="rect" coords="375,10,210,111">-->
-            <!--<area name="monte-carlo" href="#" shape="rect" coords="537,213,336,294">-->
-            <!--<area name="phase-field" href="#" shape="rect" coords="402,303,190,403">-->
-            <!--<area name="pheno" href="#" shape="rect" coords="520,456,326,501">-->
-            <!--<area name="continuum" href="#" shape="rect" coords="458,567,201,703">-->
-            <!--<area name="atomistic-constitutive" href="#" shape="rect" coords="185,95,29,194">-->
-            <!--<area name="discrete-dislocation" href="#" shape="rect" coords="223,244,56,277">-->
-            <!--<area name="crystal-plasticity" href="#" shape="rect" coords="275,448,83,557">-->
-        <!--</map>-->
+        <map id="multiscape_map" name="multiscale">
+        <area name="effective-hamiltonians" href="#" shape="rect" coords="555,87,390,186">
+        <area name="ks-dft" href="#" shape="rect" coords="375,10,210,111">
+        <area name="monte-carlo" href="#" shape="rect" coords="537,213,336,294">
+        <area name="phase-field" href="#" shape="rect" coords="402,303,190,403">
+        <area name="pheno" href="#" shape="rect" coords="520,456,326,501">
+        <area name="continuum" href="#" shape="rect" coords="458,567,201,703">
+        <area name="atomistic-constitutive" href="#" shape="rect" coords="185,95,29,194">
+        <area name="discrete-dislocation" href="#" shape="rect" coords="223,244,56,277">
+        <area name="crystal-plasticity" href="#" shape="rect" coords="275,448,83,557">
+        </map>
 
     </div>
 </div>
@@ -261,12 +305,125 @@
         <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
     </div>
 </div>
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+
+<hr>
+
+<div class="footer box">
+    <p style="margin-bottom:0px">PRISMS Center</p>
+
+    <p style="font-size:80%; line-height: 10px">(PR)edictive (I)ntegrated (S)tructural (M)aterials (S)cience</p>
+    <!--<p>DOE</p>-->
+    <p><a style="font-size:75%" href="http://www.umich.edu">&copy; The University of Michigan</a></p>
+</div>
+</div>
+
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/prisms/prisms-app.js"></script>
+<script src="assets/js/prisms/controllers.js"></script>
 <script src="assets/js/jquery.imagemapster.min.js"></script>
-<script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script src="assets/js/prisms/util.js"></script>
+<script>
+    var mytooltip = "tooltip here";
+
+    function myOnClick(data) {
+        switch (data.key) {
+            case 'effective-hamiltonians':
+                $('#effective-hamiltonians-modal-id').modal('show');
+                break;
+
+            case 'ks-dft':
+                $('#ks-dft-modal-id').modal('show');
+                break;
+
+            case 'monte-carlo':
+                $('#monte-carlo-modal-id').modal('show');
+                break;
+
+            case 'phase-field':
+                $('#phase-field-modal-id').modal('show');
+                break;
+
+            case 'pheno':
+                $('#pheno-modal-id').modal('show');
+                break;
+
+            case 'continuum':
+                $('#continuum-modal-id').modal('show');
+                break;
+
+            case 'atomistic-constitutive':
+                $('#atomistic-constitutive-modal-id').modal('show');
+                break;
+
+            case 'discrete-dislocation':
+                $('#discrete-dislocation-modal-id').modal('show');
+                break;
+
+            case 'crystal-plasticity':
+                $('#crystal-plasticity-modal-id').modal('show');
+                break;
+        }
+    }
+
+    var inArea = false;
+
+    $(document).ready(function() {
+        setActiveTab("#architecture");
+        var default_options =
+        {
+            mapKey: 'name',
+            listKey: 'name',
+            isSelectable: false,
+            fillOpacity: 0,
+            highlight: true,
+            stroke: true,
+            fill: true,
+            render_highlight: {
+                //fillColor: 'fcf8dc',
+                strokeColor: '828282',
+                strokeWidth: 4
+            },
+            onClick: myOnClick,
+            fadeInterval: 50,
+            areas: [
+                {
+                    key: 'effective-hamiltonians'
+                },
+                {
+                    key: 'ks-dft'
+                },
+                {
+                    key: 'monte-carlo'
+                },
+                {
+                    key: 'phase-field'
+                },
+                {
+                    key: 'pheno'
+                },
+                {
+                    key: 'continuum'
+                },
+                {
+                    key: 'atomistic-constitutive'
+                },
+                {
+                    key: 'discrete-dislocation'
+                },
+                {
+                    key: 'crystal-plasticity'
+                }
+            ]
+        };
+
+        $('#multiscalearch').mapster(default_options);
+    })
+    ;
+</script>
+</body>
+</html>
+
