@@ -129,6 +129,14 @@ legend.extra-padding {
     max-height: 225px;
 }
 
+.people-heading {
+    margin-top:25px;
+}
+
+a.no-wrap {
+    white-space:nowrap;
+}
+
 
 
 
