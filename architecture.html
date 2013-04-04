@@ -62,15 +62,16 @@
         <img id="multiscalearch" src="assets/img/Multiscale-Architecture.png" usemap="#multiscale">
 
         <map id="multiscape_map" name="multiscale">
-        <area name="effective-hamiltonians" href="#" shape="rect" coords="555,87,390,186">
-        <area name="ks-dft" href="#" shape="rect" coords="375,10,210,111">
-        <area name="monte-carlo" href="#" shape="rect" coords="537,213,336,294">
-        <area name="phase-field" href="#" shape="rect" coords="402,303,190,403">
-        <area name="pheno" href="#" shape="rect" coords="520,456,326,501">
-        <area name="continuum" href="#" shape="rect" coords="458,567,201,703">
-        <area name="atomistic-constitutive" href="#" shape="rect" coords="185,95,29,194">
-        <area name="discrete-dislocation" href="#" shape="rect" coords="223,244,56,277">
-        <area name="crystal-plasticity" href="#" shape="rect" coords="275,448,83,557">
+            <area name="effective-hamiltonians" href="#" shape="rect" coords="555,87,390,186">
+            <area name="ks-dft" href="#" shape="rect" coords="375,10,210,111">
+            <area name="monte-carlo" href="#" shape="rect" coords="537,213,336,294">
+            <area name="phase-field" href="#" shape="rect" coords="402,303,190,403">
+            <area name="phase-field-crystal" href="#" shape="rect" coords="380,150,285,204">
+            <area name="pheno" href="#" shape="rect" coords="520,456,326,501">
+            <area name="continuum" href="#" shape="rect" coords="458,567,201,703">
+            <area name="atomistic-constitutive" href="#" shape="rect" coords="185,95,29,194">
+            <area name="discrete-dislocation" href="#" shape="rect" coords="223,244,56,277">
+            <area name="crystal-plasticity" href="#" shape="rect" coords="275,448,83,557">
         </map>
 
     </div>
@@ -135,19 +136,71 @@
     </div>
     <div class="modal-body">
         <p>
-            Input:
-            \[ E^\mathrm{gb} \]
-            \[ E(x,F,S),\;\Gamma \]
+            <b>Input:</b> Free energies, diffusion coefficients, interfacial energies and grain boundary energies.
         </p>
 
         <p>
-            Equation:
-            \[ \frac{\partial c(x)}{\partial t} = \nabla\cdot\left(\Gamma\left(c(x)\right)\nabla\mu\right) \]
+            Phase-field modeling will be used to simulate the evolution of precipitate morphology and
+            grain structure. In a phase-field model, the microstructure of the system is represented at
+            each point in space using a set of order parameters. The total free energy of the system is
+            determined by summing the contributions of bulk free energies, interfacial or grain boundary
+            energies, and other contributions such as elastic misfit strain energies for coherent precipi-
+            tates. Each of these contributions is written as a function of the order parameters and their
+            gradients. To simulate microstructural evolution, the order parameters are evolved in time
+            such that the total free energy of the system decreases.
+
         </p>
 
         <p>
-            Output: \[ Nano-/micro-structure, \\Mean \space field \space dynamics \]
+            <b>Output:</b> Precipitate size and shape distribution, grain structure.
+            For more information, please see:
         </p>
+
+        <div class="pub">
+            <span class="title">Phase-Field Models for Microstructure Evolution</span>
+            <span class="authors">L.Q. Chen</span>
+            <span class="venue">Ann. Rev. Mater. Res., 32, 113-140 (2002).</span>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+
+<div id="phase-field-crystal-modal-id" class="modal hide fade" data-keyboard="true" tabindex='-1'>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Phase field crystal</h3>
+    </div>
+    <div class="modal-body">
+        <p>
+            <b>Input:</b> Free energy functional containing the atomic correlation function.
+        </p>
+
+        <p>
+            Phase-field crystal (PFC) models are similar to phase-field models in that the structure
+            of a material is represented by the value of an order parameter at each point in the sys-
+            tem, but in PFC models, the order parameter represents the local atomic density and thus
+            resolves the structure of a material at an atomic level. One of the key advantages of the
+            PFC method is that while the spatial resolution is at the atomic length scale, it operates at
+            diffusive time scales. Since individual atoms’ positions are resolved, the PFC method can be
+            used to investigate phenomena such as vacancy formation and diffusion, dislocation motion,
+            and grain boundary structure and energies. In the PRISMS multi-scale architecture, the
+            PFC model will be used to determine dislocation mobilities for use in dislocation dynamics
+            simulations, and will also be used to calculate grain boundary energies for use in phase-field
+            simulations of grain structure evolution.
+
+        </p>
+
+        <p>
+            <b>Output:</b> Grain boundary energies, dislocation mobilities.
+            For more information, please see:
+        </p>
+        <div class="pub">
+            <span class="title">Using the Phase-Field Crystal Method in the Multi-Scale Modeling of Microstructure Evolution </span>
+            <span class="authors">N. Provatas et al.</span>
+            <span class="venue">JOM, 59, 83-90 (2007).</span>
+        </div>
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -232,17 +285,33 @@
     </div>
     <div class="modal-body">
         <p>
-            Input: \[ Dislocation \space mobilities \]
+            <b>Input:</b> Dislocation mobilities, solute hardening.
         </p>
 
         <p>
-            Equation: \[ f^\mathrm{PK}_i = \epsilon_{ijk}\tau_{jm}b_m\xi_k \]
+            Dislocation dynamics is a technique for modeling the motion and interaction of many indi-
+            vidual dislocation lines. In this technique, each dislocation is represented as a singular line
+            in an elastic continuum. The stress field acting on each segment of the dislocation is found
+            by summing the various components acting on the elastic continuum, such as dislocation-
+            dislocation interactions, applied stress, self-stress, dislocation-precipitate interactions, and
+            so on. The force per unit length in each direction acting on each dislocation segment due
+            to the net stress field is found using the Peach-Koehler formula, and the resulting velocity
+            of each dislocation segment is calculated as a function of the net force using a Newtonian
+            equation of motion. From the net motion of the dislocations, the components of the plas-
+            tic strain-rate tensor can be calculated and used to determine the hardening function Hαβ ,
+            which is input to the crystal plasticity model in our multi-scale architecture.
         </p>
 
         <p>
-            Output:
-            \[ H^{\alpha\beta} \]
+            <b>Output:</b> Hardening laws for crystal plasticity.
+            For more information, please see:
         </p>
+
+        <div class="pub">
+            <span class="title">Advances in Discrete Dislocation Dynamics and Multiscale Modeling</span>
+            <span class="authors">S. Groh and H.M. Zbib</span>
+            <span class="venue">J. Eng. Mater.-T ASME, 131, 041209 (2009).</span>
+        </div>
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -347,6 +416,10 @@
                 $('#phase-field-modal-id').modal('show');
                 break;
 
+            case 'phase-field-crystal':
+                $('#phase-field-crystal-modal-id').modal('show');
+                break;
+
             case 'pheno':
                 $('#pheno-modal-id').modal('show');
                 break;
@@ -401,6 +474,9 @@
                 },
                 {
                     key: 'phase-field'
+                },
+                {
+                    key: 'phase-field-crystal'
                 },
                 {
                     key: 'pheno'
