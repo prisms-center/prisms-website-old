@@ -1,0 +1,118 @@
+%!TEX TS-program = pdflatex
+
+\documentclass[12pt]{article}	
+
+
+\usepackage[pdftex,bookmarks,colorlinks,breaklinks]{hyperref}  % PDF hyperlinks, with coloured links
+\hypersetup{linkcolor=red,citecolor=blue,filecolor=magenta,urlcolor=cyan} % coloured links
+
+%\usepackage[pdftex]{graphicx, hyperref}
+\usepackage{subfigure, cite, amsmath, amssymb,graphicx,bm}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+% you can include just about any file format you want.
+
+
+% Example to link a section:
+%\hyperref[secIntro]{introduction}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.9in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{-0.6in}
+
+%\renewcommand{\baselinestretch}{1.5}
+\parskip 0pc							% Extra Space between paragraphs
+\parindent 0pc 							% Don't indent paragraphs
+
+\begin{document}
+
+
+%BEGIN ACTUAL TEXT 
+%###############################################################
+\section{Kohn-Sham Density Functional Theory}
+ \textbf{Input:}  Exchange-correlation functional, pseudopotential, atomic structure\\
+ \\
+Kohn-Sham Density Functional Theory (KS-DFT) will be used to approximate the Schr\"{o}dinger equation and calculate the total energy of atomic structures. The total energy is used to determine the formation energy of alloys and precipitates, as well as the point, line, and plane defects necessary for understanding material thermodynamics. Nudged-elastic band calculations are used to calculate point defect migration energies necessary for predicting kinetics.\\
+\\
+\textbf{Output:} Total energy, formation and migration energies\\
+\\
+For more information, please see:
+\\
+A. Author, ``Title,'' \textit{journal}, Vol, p1-p2 (year).
+
+%########################
+
+\section{Effective Hamiltonians}
+ \textbf{Input:}  Formation and migration energies\\
+\\
+Cluster Hamiltonians provide an accurate, efficient approximation of the energetics of a crystalline system and enable statistical mechanics calculations that are infeasible to do directly with \emph{ab initio} calculations. The total energy, $E$, is a function of the arrangement of occupants in crystal structure and can be expressed in terms of an expansion of cluster functions:
+\begin{eqnarray}
+E(\bm{\sigma})&=&V_0 + \sum_\alpha V_\alpha \phi_\alpha(\bm{\sigma}), \\
+\phi_\alpha(\bm{\sigma}) &=& \prod_{i \in \alpha} \sigma_i,
+\end{eqnarray}
+in which $\bm{\sigma}$ is the set of occupation variables, $\sigma_i$, describing the occupants of the crystal sites, $\alpha$ is a particular symmetrically unique cluster of sites (point cluster, pair cluster, triplet cluster, etc.), $\phi_\alpha$ are polynomials of the occupation variables, and $V_\alpha$ are expansion coefficients called effective cluster interactions (ECIs) obtained by fitting to \emph{ab initio} calculations. Many chemical interactions are relatively short-ranged, allowing truncation of the cluster Hamiltonian and efficient evaluation without loss of predictive power. Long-range elastic and electrostatic interactions can be fit using reciprocal space Hamiltonians.
+\\
+\\
+\textbf{Output:} Cluster Hamiltonians \\
+\\
+For more information, please see:
+\\
+A. Author, ``Title,'' \textit{journal}, Vol, p1-p2 (year).
+
+%########################
+
+\section{Monte Carlo Calculations}
+ \textbf{Input:}  Cluster Hamiltonians \\
+ \\
+Statistical mechanics provides the link between atomistic and continuum scales. Provided cluster Hamiltonians that describe the energetics and kinetics of a particular material system, Monte Carlo techniques can efficiently calculate thermodynamic quantities of interest. Free energies calculated using grand canoncial Monte Carlo methods can be used to construct multi-component temperature composition phase diagrams and used as input to phase field simulations. Multi-component diffusion coefficients can be obtained from kinetic Monte Carlo calculations.\\
+\\
+\textbf{Output:} Free energy functions, phase diagrams, and diffusion coefficients \\
+\\
+For more information, please see:
+\\
+A. Author, ``Title,'' \textit{journal}, Vol, p1-p2 (year).
+
+%########################
+
+ \section{Phase-Field Modeling}
+ \textbf{Input:}  Free energies, diffusion coefficients, interfacial energies and grain boundary energies\\
+ \\
+Phase-field modeling will be used to simulate the evolution of precipitate morphology and grain structure. In a phase-field model, the microstructure of the system is represented at each point in space using a set of order parameters. The total free energy of the system is determined by summing the contributions of bulk free energies, interfacial or grain boundary energies, and other contributions such as elastic misfit strain energies for coherent precipitates. Each of these contributions is written as a function of the order parameters and their gradients. To simulate microstructural evolution, the order parameters are evolved in time such that the total free energy of the system decreases. \\
+\\
+\textbf{Output:} Precipitate size and shape distribution, grain structure \\
+\\
+For more information, please see:
+\\
+L.Q. Chen, ``Phase-Field Models for Microstructure Evolution,'' \textit{Ann. Rev. Mater. Res.}, 32, 113-140 (2002).
+
+%########################
+
+ \section{Phase-Field Crystal Modeling}
+ \textbf{Input:}  Free energy functional containing the atomic correlation function\\
+ \\
+Phase-field crystal (PFC) models are similar to phase-field models in that the structure of a material is represented by the value of an order parameter at each point in the system, but in PFC models, the order parameter represents the local atomic density and thus resolves the structure of a material at an atomic level. One of the key advantages of the PFC method is that while the spatial resolution is at the atomic length scale, it operates at diffusive time scales. Since individual atoms' positions are resolved, the PFC method can be used to investigate phenomena such as vacancy formation and diffusion, dislocation motion, and grain boundary structure and energies. In the PRISMS multi-scale architecture, the PFC model will be used to determine dislocation mobilities for use in dislocation dynamics simulations, and will also be used to calculate grain boundary energies for use in phase-field simulations of grain structure evolution.\\
+\\
+\textbf{Output:} Grain boundary energies, dislocation mobilities \\
+\\
+For more information, please see:
+\\
+N. Provatas \textit{et al.}, ``Using the Phase-Field Crystal Method in the Multi-Scale Modeling of Microstructure Evolution,'' \textit{JOM}, 59, 83-90 (2007).
+
+%########################
+
+ \section{Dislocation Dynamics}
+ \textbf{Input:}  Dislocation mobilities, solute hardening\\
+ \\
+Dislocation dynamics is a technique for modeling the motion and interaction of many individual dislocation lines. In this technique, each dislocation is represented as a singular line in an elastic continuum. The stress field acting on each segment of the dislocation is found by summing the various components acting on the elastic continuum, such as dislocation-dislocation interactions, applied stress, self-stress, dislocation-precipitate interactions, and so on. The force per unit length in each direction acting on each dislocation segment due to the net stress field is found using the Peach-Koehler formula, and the resulting velocity of each dislocation segment is calculated as a function of the net force using a Newtonian equation of motion. From the net motion of the dislocations, the components of the plastic strain-rate tensor can be calculated and used to determine the hardening function $H_{\alpha\beta}$, which is input to the crystal plasticity model in our multi-scale architecture.\\
+\\
+\textbf{Output:} Hardening laws for crystal plasticity \\
+\\
+For more information, please see:
+\\
+S. Groh and H.M. Zbib, ``Advances in Discrete Dislocation Dynamics and Multiscale Modeling,'' \textit{J. Eng. Mater.-T ASME}, 131, 041209 (2009).
+
+%########################
+
+\end{document} 
+
