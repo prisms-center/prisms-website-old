@@ -85,11 +85,19 @@
     </div>
     <div class="modal-body">
         <p>
-            Equation: \[ H\psi = E\psi \]
+            <b>Input:</b> Exchange-correlation functional, pseudopotential, atomic structure
         </p>
 
         <p>
-            Output: \[ E^\mathrm{form},\;E^\mathrm{mig}\;\mathbb{C}_{ijkl} \]
+            Kohn-Sham Density Functional Theory (KS-DFT) will be used to approximate the Schrodinger equation and
+            calculate the total energy of atomic structures. The total energy is used to determine the formation energy
+            of alloys and precipitates, as well as the point, line, and plane defects necessary for understanding
+            material thermodynamics. Nudged-elastic band calculations are used to calculate point defect migration
+            energies necessary for predicting kinetics.
+        </p>
+
+        <p>
+            <b>Output:</b> Total energy, formation and migration energies
         </p>
     </div>
     <div class="modal-footer">
@@ -104,24 +112,22 @@
     </div>
     <div class="modal-body">
         <p>
-            Input:
-            \[ E^\mathrm{config}\\ Ppt growth \]
+            <b>Input:</b>
+            Cluster Hamiltonians
         </p>
 
         <p>
-            Equation (Monte Carlo):
-            \[ Z = \sum \limits_\omega e^{-\beta E_\omega} \]
+            Statistical mechanics provides the link between atomistic and continuum scales. Provided cluster
+            Hamiltonians that describe the energetics and kinetics of a particular material system, Monte Carlo
+            techniques can efficiently calculate thermodynamic quantities of interest. Free energies calculated using
+            grand canoncial Monte Carlo methods can be used to construct multi-component temperature composition phase
+            diagrams and used as input to phase field simulations. Multi-component diffusion coefficients can be
+            obtained from kinetic Monte Carlo calculations.
         </p>
 
         <p>
-            Equation (Kinetic Monte Carlo):
-            \[ \frac{\partial P_j(t)}{\partial t} = \sum \limits_i \left(R_{i\rightarrow j}P_i(t) - R_{j\rightarrow
-            i}P_j(t)\right) \]
-
-        <p>
-            Output:
-            \[ E(x,F,S),\;\Gamma \\ Ordering, correlation functions\]
-            \[ M,R \]
+            <b>Output:</b>
+            Free energy functions, phase diagrams, and diffusion coefficients
         </p>
     </div>
     <div class="modal-footer">
@@ -196,6 +202,7 @@
             <b>Output:</b> Grain boundary energies, dislocation mobilities.
             For more information, please see:
         </p>
+
         <div class="pub">
             <span class="title">Using the Phase-Field Crystal Method in the Multi-Scale Modeling of Microstructure Evolution </span>
             <span class="authors">N. Provatas et al.</span>
@@ -356,18 +363,31 @@
     </div>
     <div class="modal-body">
         <p>
-            Input: \[ E^\mathrm{form},\;E^\mathrm{mig}\;\mathbb{C}_{ijkl} \]
-
-        <p>
-            Equation:
-            \[ E(\sigma) = V_0 + \sum_{\alpha} V_\alpha\,\prod_{i\in\alpha}\sigma_i \]
-            \[ \sigma_i = -1,\;\sigma_j = 1 \]
+            <b>Input:</b>Formation and migration energies
         </p>
 
         <p>
-            Output:
-            \[ E^\mathrm{config} \]
-            \[ W(F^\mathrm{e}),\;\mathbb{C}_{ijkl} \]
+            Cluster Hamiltonians provide an accurate, efficient approximation of the energetics of a crystalline system
+            and enable statistical mechanics calculations that are infeasible to do directly with $ab initio$
+            calculations. The total energy, $E$, is a function of the arrangement of occupants in crystal structure and
+            can be expressed in terms of an expansion of cluster functions:
+            \[ \begin{eqnarray}
+            E(\sigma)&=&V_0 + \sum_\alpha V_\alpha \phi_\alpha(\sigma), \\
+            \phi_\alpha(\sigma) &=& \prod_{i \in \alpha} \sigma_i,
+            \end{eqnarray}
+            \]
+            in which $\sigma$ is the set of occupation variables, $\sigma_i$, describing the occupants of the
+            crystal sites, $\alpha$ is a particular symmetrically unique cluster of sites (point cluster, pair cluster,
+            triplet cluster, etc.), $\phi_\alpha$ are polynomials of the occupation variables, and $V_\alpha$ are
+            expansion coefficients called effective cluster interactions (ECIs) obtained by fitting to $ab initio$
+            calculations. Many chemical interactions are relatively short-ranged, allowing truncation of the cluster
+            Hamiltonian and efficient evaluation without loss of predictive power. Long-range elastic and electrostatic
+            interactions can be fit using reciprocal space Hamiltonians.
+        </p>
+
+        <p>
+            <b>Output:</b>
+            Cluster Hamiltonians
         </p>
     </div>
     <div class="modal-footer">
@@ -392,6 +412,9 @@
 <script src="assets/js/prisms/prisms-app.js"></script>
 <script src="assets/js/prisms/controllers.js"></script>
 <script src="assets/js/jquery.imagemapster.min.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <script src="assets/js/prisms/util.js"></script>
